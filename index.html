@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Scuba Ventures, Rock Hill South Carolina</title>
+    <style>
+        .animate-pop {
+            animation: pop 0.6s cubic-bezier(0.38, 0.1, 0.36, 1.46) forwards;
+            opacity: 0;
+        }
+        @keyframes pop {
+            0% { opacity: 0; transform: scale(0.5); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <header class="bg-blue-900 text-white">
+        <div class="container mx-auto flex justify-between items-center py-4">
+            <div>
+                <a href="/"><img src="images/logo.png" alt="Scuba Ventures Logo" class="h-12"></a>
+            </div>
+            <nav>
+                <ul class="flex space-x-8">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/products">Products</a></li>  
+                    <li><a href="/training">Training</a></li>
+                    <li><a href="/rentals">Rental Equipment</a></li>
+                    <li><a href="/events">Upcoming Events</a></li>
+                    <li><a href="/contact">Contact Us</a></li>
+                </ul>
+            </nav>
+            <div class="flex items-center space-x-4">
+                <a href="/account" class="hover:text-blue-200"><i class="fas fa-user"></i> Account</a>
+                <a href="/cart" class="hover:text-blue-200"><i class="fas fa-shopping-cart"></i> Cart (0)</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="bg-blue-100 py-12">
+        <div class="container mx-auto grid md:grid-cols-2 gap-8 items-center">
+            <div class="animate-pop">
+                <h1 class="text-4xl font-bold mb-4">Welcome to Scuba Ventures</h1>
+                <p class="text-lg mb-8">We are your premier local dive shop in Rock Hill, SC. Whether you're an experienced diver or just getting started, we have everything you need.</p>
+                <a href="/training" class="bg-blue-600 text-white px-6 py-3 rounded-full text-lg hover:bg-blue-700">Start Diving</a>
+            </div>
+            <div class="animate-pop">
+                <img src="images/hero.jpg" alt="Scuba diving" class="rounded-lg shadow-lg">
+            </div>
+        </div>
+    </section>
+    
+    <section class="container mx-auto my-12">
+        <h2 class="text-3xl font-bold mb-8 animate-pop">Featured Products</h2>
+        <div class="grid md:grid-cols-4 gap-8">
+            <div class="border rounded-lg p-4 animate-pop">
+                <img src="images/product1.jpg" alt="Product 1" class="w-full mb-4">
+                <h3 class="text-lg font-bold mb-2">Diving Mask</h3>
+                <p class="text-gray-500 mb-4">$49.99</p>
+                <a href="/product1" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">View Details</a>
+            </div>
+            <div class="border rounded-lg p-4 animate-pop">
+                <img src="images/product2.jpg" alt="Product 2" class="w-full mb-4">  
+                <h3 class="text-lg font-bold mb-2">Fins</h3>
+                <p class="text-gray-500 mb-4">$89.99</p>
+                <a href="/product2" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">View Details</a>
+            </div>
+            <div class="border rounded-lg p-4 animate-pop">
+                <img src="images/product3.jpg" alt="Product 3" class="w-full mb-4">
+                <h3 class="text-lg font-bold mb-2">BCD</h3> 
+                <p class="text-gray-500 mb-4">$499.99</p>
+                <a href="/product3" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">View Details</a>
+            </div>
+            <div class="border rounded-lg p-4 animate-pop">
+                <img src="images/product4.jpg" alt="Product 4" class="w-full mb-4">
+                <h3 class="text-lg font-bold mb-2">Dive Computer</h3>
+                <p class="text-gray-500 mb-4">$299.99</p>
+                <a href="/product4" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">View Details</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-blue-900 text-white py-12">
+        <div class="container mx-auto flex justify-between">
+            <div class="w-1/2 animate-pop">
+                <h2 class="text-3xl font-bold mb-4">Dive Training</h2>
+                <p class="mb-4">Get certified and expand your skills with our expert instructors and top-notch facilities.</p>
+                <a href="/training" class="bg-white text-blue-900 px-6 py-3 rounded-full hover:bg-blue-100">Learn More</a>
+            </div>
+            <div class="w-1/3 animate-pop">
+                <img src="images/training.jpg" alt="Dive training" class="rounded-lg shadow-lg">
+            </div>
+        </div>  
+    </section>
+
+    <section class="container mx-auto my-12">
+        <h2 class="text-3xl font-bold mb-8 animate-pop">Upcoming Events</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+            <div class="border rounded-lg animate-pop">
+                <img src="images/event1.jpg" alt="Event 1" class="w-full mb-4">
+                <div class="p-4">
+                    <h3 class="text-xl font-bold mb-2">Night Dive</h3>
+                    <p class="text-gray-500 mb-4">July 15th, 6pm - 9pm</p>
+                    <a href="/event1" class="text-blue-500 hover:text-blue-600">Learn more <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="border rounded-lg animate-pop">
+                <img src="images/event2.jpg" alt="Event 2" class="w-full mb-4">
+                <div class="p-4">
+                    <h3 class="text-xl font-bold mb-2">Wreck Diving Trip</h3>
+                    <p class="text-gray-500 mb-4">August 5th - 7th</p>
+                    <a href="/event2" class="text-blue-500 hover:text-blue-600">Learn more <i class="fas fa-arrow-right"></i></a>  
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-100 py-12">
+        <div class="container mx-auto grid md:grid-cols-4 gap-8">
+            <div class="animate-pop">
+                <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                <ul class="space-y-2">
+                    <li><a href="/about" class="hover:text-blue-500">About Us</a></li>
+                    <li><a href="/contact" class="hover:text-blue-500">Contact Us</a></li>
+                    <li><a href="/faq" class="hover:text-blue-500">FAQs</a></li>
+                </ul>
+            </div>
+            <div class="animate-pop">
+                <h3 class="text-xl font-bold mb-4">Customer Service</h3>  
+                <ul class="space-y-2">
+                    <li><a href="/shipping" class="hover:text-blue-500">Shipping & Returns</a></li>
+                    <li><a href="/terms" class="hover:text-blue-500">Terms & Conditions</a></li>
+                    <li><a href="/privacy" class="hover:text-blue-500">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="animate-pop">
+                <h3 class="text-xl font-bold mb-4">Connect With Us</h3>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-400 hover:text-blue-500"><i class="fab fa-facebook fa-2x"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-blue-500"><i class="fab fa-twitter fa-2x"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-blue-500"><i class="fab fa-instagram fa-2x"></i></a>
+                </div>
+            </div>
+            <div class="animate-pop">
+                <h3 class="text-xl font-bold mb-4">Our Location</h3>
+                <address class="not-italic">
+                    Scuba Ventures<br>
+                    307 N Wilson St<br>
+                    Rock Hill, SC 29730<br> 
+                    <a href="tel:803-328-0000" class="hover:text-blue-500 block mt-2">803-328-0000</a>
+                </address>  
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function isElementInViewport(el) {
+            const rect = el.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        function animateOnScroll() {
+            const animateElements = document.querySelectorAll('.animate-pop');
+            animateElements.forEach((el) => {
+                if (isElementInViewport(el)) {
+                    el.classList.add('animate-pop');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+    </script>
+</body>
+</html>
