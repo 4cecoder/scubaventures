@@ -21,7 +21,7 @@
     <header class="bg-blue-900 text-white">
         <div class="container mx-auto flex justify-between items-center py-4">
             <div>
-                <a href="/"><img src="images/logo.png" alt="Scuba Ventures Logo" class="h-12"></a>
+                <a href="/"><img src="logo.png" alt="Scuba Ventures Logo" class="h-26"></a>
             </div>
             <nav>
                 <ul class="flex space-x-8">
@@ -41,14 +41,23 @@
     </header>
 
     <section class="bg-blue-100 py-12">
-        <div class="container mx-auto grid md:grid-cols-2 gap-8 items-center">
-            <div class="animate-pop">
-                <h1 class="text-4xl font-bold mb-4">Welcome to Scuba Ventures</h1>
-                <p class="text-lg mb-8">We are your premier local dive shop in Rock Hill, SC. Whether you're an experienced diver or just getting started, we have everything you need.</p>
-                <a href="/training" class="bg-blue-600 text-white px-6 py-3 rounded-full text-lg hover:bg-blue-700">Start Diving</a>
-            </div>
-            <div class="animate-pop">
-                <img src="images/hero.jpg" alt="Scuba diving" class="rounded-lg shadow-lg">
+        <div class="container mx-auto">
+            <div class="relative">
+                <div class="absolute inset-0 flex items-center justify-between p-4 z-10">
+                    <button id="prevButton" class="bg-white text-blue-900 rounded-full p-2 hover:bg-blue-100 focus:outline-none">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button id="nextButton" class="bg-white text-blue-900 rounded-full p-2 hover:bg-blue-100 focus:outline-none">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                <div id="slideshow" class="relative overflow-hidden">
+                    <div class="relative w-full">
+                        <img src="https://scubaventures.net/images/slide1.jpg" alt="Slide 1" class="w-full">
+                        <img src="https://scubaventures.net/images/slide2.jpg" alt="Slide 2" class="w-full absolute top-0 left-0 opacity-0">
+                        <img src="https://scubaventures.net/images/slide3.jpg" alt="Slide 3" class="w-full absolute top-0 left-0 opacity-0">
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -178,6 +187,43 @@
 
         window.addEventListener('scroll', animateOnScroll);
         window.addEventListener('load', animateOnScroll);
+
+        const slideshow = document.getElementById('slideshow');
+        const images = slideshow.getElementsByTagName('img');
+        const prevButton = document.getElementById('prevButton');
+        const nextButton = document.getElementById('nextButton');
+        let currentImageIndex = 0;
+
+        function showImage(index) {
+            images[currentImageIndex].classList.remove('opacity-100');
+            images[currentImageIndex].classList.add('opacity-0');
+            images[index].classList.remove('opacity-0');
+            images[index].classList.add('opacity-100');
+            currentImageIndex = index;
+        }
+
+        function showNextImage() {
+            let nextIndex = (currentImageIndex + 1) % images.length;
+            showImage(nextIndex);
+        }
+
+        function showPrevImage() {
+            let prevIndex = (currentImageIndex - 1 + images.length) % images.length;
+            showImage(prevIndex);
+        }
+
+        let slideshowInterval = setInterval(showNextImage, 5000);
+
+        slideshow.addEventListener('mouseenter', () => {
+            clearInterval(slideshowInterval);
+        });
+
+        slideshow.addEventListener('mouseleave', () => {
+            slideshowInterval = setInterval(showNextImage, 5000);
+        });
+
+        prevButton.addEventListener('click', showPrevImage);
+        nextButton.addEventListener('click', showNextImage);
     </script>
 </body>
 </html>
